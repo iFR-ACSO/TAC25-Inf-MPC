@@ -19,20 +19,20 @@ aforementioned parts is provided.
   but are not tested!)
 
 - For the pre-computation step we make use of
-  Ca$\Sigma$oS [@Cunis2025acc] v1.0.0-rc. The used version can be found
+  CaΣoS [1] v1.0.0-rc. The used version can be found
   in the repository. Add the main folder of Ca$\Sigma$oS to the Matlab
   path.
 
-- MOSEK [@andersen_mosek_2000] v10.2.5 is used as the underlying SDP
+- MOSEK [2] v10.2.5 is used as the underlying SDP
   solver for the pre-computation step. Academic licenses can be obtained
   from <https://www.mosek.com/products/academic-licenses/>. Follow the
   installation instructions from MOSEK.
 
 - For online optimizations, we make use of
-  CasADi [@andersson_casadi_2019] v3.6.7 to setup the problems and can
+  CasADi [3] v3.6.7 to setup the problems and can
   be obtained from <https://web.casadi.org/get/>. We used
-  qrqp [@ANDERSSON2018331] for the (S)QP and
-  IPOPT [@wachter_implementation_2006] to solve the discrete-time OCP.
+  qrqp [4] for the (S)QP and
+  IPOPT [5] to solve the discrete-time OCP.
   The solvers are included in CasADi so no additional installation
   required.
 
@@ -74,7 +74,7 @@ Comparison_singleAxis/
 ```
 
 
-### Reproduction {#reproduction .unnumbered}
+### Reproduction
 
 We provide `.mat` files for each individual approach in the main folder,
 i.e.,\
@@ -87,7 +87,7 @@ folders. Once the actual simulation ran, the post-processing script
 reduces the data to the comparison minimum. The data of the complete
 workspace for the full-horizon formulations is not provided.
 
-### Re-running {#re-running .unnumbered}
+### Re-running 
 
 The user is welcome to run the scripts and functions. It should be noted
 that, for example, the full-horizon NMPC formulation might take a
@@ -124,3 +124,27 @@ The allowable set is manually inserted into the synthesis
 script`synthesis_CBF_CLF.m`. Important to know is that the simulations
 script `inf_MPC_simulation.m` computes a new uniform distribution if
 re-run. Thus, different results to the paper are expected!
+
+
+### References
+
+
+[1] T. Cunis and J. Olucak, “CaoS: A nonlinear sum-of-squares optimization suite,” in 2025 Amer-
+ican Control Conference, (Boulder, CO), pp. 1659–1666, 2025.
+
+[2] E. D. Andersen and K. D. Andersen, “The Mosek Interior Point Optimizer for Linear Program-
+ming: An Implementation of the Homogeneous Algorithm,” in High Performance Optimization
+(H. Frenk, K. Roos, T. Terlaky, and S. Zhang, eds.), 2000.
+
+[3] J. A. E. Andersson, J. Gillis, G. Horn, J. B. Rawlings, and M. Diehl, “CasADi: a software frame-
+work for nonlinear optimization and optimal control,” Mathematical Programming Computation,
+vol. 11, no. 1, pp. 1–36, 2019.
+
+[4] J. A. Andersson and J. B. Rawlings, “Sensitivity analysis for nonlinear programming in casadi,”
+IFAC-PapersOnLine, vol. 51, no. 20, pp. 331–336, 2018. 6th IFAC Conference on Nonlinear
+Model Predictive Control NMPC 2018.
+
+[5] A. Wächter and L. T. Biegler, “On the implementation of an interior-point filter line-search
+algorithm for large-scale nonlinear programming,” Mathematical Programming, vol. 106, pp. 25–
+57, Mar. 2006.
+
