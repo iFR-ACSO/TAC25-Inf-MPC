@@ -20,7 +20,7 @@ aforementioned parts is provided.
 
 - For the pre-computation step we make use of
   CaΣoS [1] v1.0.0-rc. The used version can be found
-  in the repository. Add the main folder of Ca$\Sigma$oS to the Matlab
+  in the repository. Add the main folder of CaΣoS to the Matlab
   path.
 
 - MOSEK [2] v10.2.5 is used as the underlying SDP
@@ -76,9 +76,7 @@ Comparison_singleAxis/
 
 ### Reproduction
 
-We provide `.mat` files for each individual approach in the main folder,
-i.e.,\
-Comparison_singleAxis. This includes the pre-computation results or the
+We provide `.mat` files for each individual approach in the main folder. This includes the pre-computation results or the
 actual simulation results. Run `comparison_MultipleRuns.m`, to reproduce
 the table from the paper and to get the plot for the single axis
 rotation. Due to the large amount of data, the full-horizon NMPC
@@ -98,7 +96,7 @@ significant amount of time for the simulation in MATLAB.
 ### Overview Files
 
 The second part only considers the infinetesimal MPC scheme. The user
-finds a synthesis to compute the terminal conditions. These use an
+finds a synthesis script to compute the terminal conditions. These use an
 initial guess, which is loaded from a `.mat` file. Once the synthesis is
 done, the terminal conditions are also stored in a `.mat` file. This
 `.mat` files are the loaded into the workspace in the simulation
@@ -126,9 +124,9 @@ Run `evaluation.m` to get all plots from the paper and additional once.
 
 ### Re-running
 
-The inner-approximation of the constraint set (i.e., the allowable set)
+The inner-approximation of the constraint set (i.e., the constraint set)
 for this scenario can be pre-computed using `innerApprox_allowSet.m`.
-The allowable set is manually inserted into the synthesis
+The approximated constraint set is manually inserted into the synthesis
 script`synthesis_CBF_CLF.m`. Important to know is that the simulations
 script `inf_MPC_simulation.m` computes a new uniform distribution if
 re-run. Thus, different results to the paper are expected!
