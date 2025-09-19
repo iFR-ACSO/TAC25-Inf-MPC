@@ -111,6 +111,14 @@ time. To compile the `.mex` functions a C/C++ compiler is required.
 
 Not all functions and `.mat` files are listed. Only the most important
 functions.
+```text
+Three-Axis_constrained_quartic_compFun/
+├── helperFunction/             # Folder that contains helper functions (e.g. MRP→Euler)
+├── innerApprox_allowSet.m      # Compute inner-approximation of constraint set
+├── synthesis_CBF_CLF.m         # Script for the synthesis of the terminal conditions
+└── inf_MPC_simulation.m        # Script to run the Monte-Carlo simulations
+```
+
 
 ### Reproduction
 
