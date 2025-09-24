@@ -21,12 +21,18 @@ close all
 clear
 clc
 
-
+% generate tikz figures and pdf; set to true if needed (requires
+% matlab2tikz)
+tikz = false;
+export3D = false;
 addpath("helperFunctions\")
 
 % load MC data
-load 'full_WS_KeepOutResults_withCompFun.mat'
-
+if exist('full_WS_KeepOutResults_withCompFun.mat','file')
+    load 'full_WS_KeepOutResults_withCompFun.mat'
+else
+    disp('Please download data from DARUS repo: https://doi.org/10.18419/DARUS-5297')
+end
 
 
 %% Compute statistics on computation time in miliseconds
@@ -116,10 +122,10 @@ for i = 4:6
     legend(h,'zero line')
 end
 
-
+if tikz
 cleanfigure();
 matlab2tikz('attitude_compII.tex','width','\figW','height','\figH');
-
+end
 % Plot Control Torques in miliNetwonmeter
 t_short = linspace(0, simTime, (simTime/simStepSize)-1);
 
@@ -160,9 +166,10 @@ h = zeros(1, 1);
 h(1) = plot(NaN,NaN,'k--');
 legend(h,'zero line')
 
+if tikz 
 cleanfigure();
 matlab2tikz('torques_compII.tex','width','\figW','height','\figH');
-
+end
 
 
 % Plot Sufficient Conditions evaluted along trajectories
@@ -181,9 +188,10 @@ h = zeros(1, 1);
 h(1) = plot(NaN,NaN,'k--');
 legend(h,'zero line')
 
+if tikz
 cleanfigure();
 matlab2tikz('suffCon_compII.tex','width','\figW','height','\figH');
-
+end
 
 % Plot barrier evaluted along trajectories
 figure('Name', 'Barrier');
@@ -290,5 +298,6 @@ set(gca, 'TickLabelInterpreter', 'latex', 'FontSize', 10);
 xlabel('$x_I$', 'Interpreter', 'latex', 'FontSize', 10);      % x-axis label
 ylabel('$y_I$', 'Interpreter', 'latex', 'FontSize', 10);      % y-axis label
 zlabel('$z_I$', 'Interpreter', 'latex', 'FontSize', 10);      % if 3D plot
-
+if export3D
 exportgraphics(gcf, 'scenario2.pdf', 'ContentType', 'vector');
+end

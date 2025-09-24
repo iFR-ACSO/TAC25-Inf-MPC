@@ -48,7 +48,7 @@ close all
 clc
 
 % functions to convert e.g. from MRP to Euler angles
-addpath('..\helperFunc\')
+addpath('helperFunctions\')
 
 % select a QP solver
 qpSolver = 'qrqp'; % 'qpOASES','osqp','proxqp', 'qrqp'
