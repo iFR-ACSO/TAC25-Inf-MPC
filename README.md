@@ -46,23 +46,23 @@ aforementioned parts is provided.
   The solvers are included in CasADi so no additional installation
   required.
 
-After installing all the above needed software
-```
+After installing all the above needed software:
+
 1. Open Matlab and add navigate to the main folder. You should see three folder, one with the initialized submodule
 2. Add the CaΣoS folder to the MATLAB path.
 3. You can either re-run everything (see below) or if you just want to reproduce the data, you might need to copy paste some large .mat filder from the DARUS repository (see the ReadME.txt in DARUS)
-```
+
 
 ## Running Examples and Reproducing Results
 
 In the following, it is assumed everything is installed and setup as
 explained before.
 
-## Part I: Comparison
+## Part I: Comparative Study
 
 ### Overview Files
 
-For the CBF-CLF-QP, infinetesimal MPC scheme the user finds a synthesis
+For the CBF-CLF-QP and infinetesimal MPC scheme the user finds a synthesis
 to compute the terminal conditions. These use an initial guess, which is
 loaded from a `.mat` file. Once the synthesis is done, the terminal
 conditions are also stored in a `.mat` file. This `.mat` files are the
@@ -71,10 +71,10 @@ loaded into the workspace in the simulation scripts.
 `.mex` functions for the simulation are generated to improve simulation
 time. To compile the `.mex` functions a C/C++ compiler is required.
 
-For the full-horizon NMPC formulations (IPOPT, RTI), the terminal set is
+For the full-horizon NMPC formulations (Ipopt, RTI), the terminal set is
 also pre-computed, i.e., the maximum stable level set, which can be
 found in `full_MPC_IPOPT/termIngredient_full.m`. After the simulations
-run, plots from all runs are generated and `.mat ` files with the
+run, plots from all runs are generated and `.mat ` files. Due to the larger size, the `.mat` files are post-processed. You can find the full workspace `.mat` in the DARUS repo. The post-processed `.mat`
 results are stored in the main folder.
 
 ### Folder Structure
@@ -98,25 +98,25 @@ actual simulation results. Run `comparison_MultipleRuns.m`, to reproduce
 the table from the paper and to get the plot for the single axis
 rotation. Due to the large amount of data, the full-horizon NMPC
 formulations (RTI and IPOPT) have post-processing scripts in their
-folders. Once the actual simulation ran, the post-processing script
+folders (see above). Once the actual simulation ran, the post-processing script
 reduces the data to the comparison minimum. The data of the complete
-workspace for the full-horizon formulations is not provided.
+workspace for the full-horizon formulations is provided in the DARUS data repository.
 
 ### Re-running 
 
-The user is welcome to run the scripts and functions. It should be noted
+The user is welcome to run the scripts and functions to reproduce the results. It should be noted
 that, for example, the full-horizon NMPC formulation might take a
 significant amount of time for the simulation in MATLAB.
 
-## Part II: Three-Axis Constrained Problem
+## Part II: Performance Test
 
 ### Overview Files
 
 The second part only considers the infinetesimal MPC scheme. The user
 finds a synthesis script to compute the terminal conditions. These use an
 initial guess, which is loaded from a `.mat` file. Once the synthesis is
-done, the terminal conditions are also stored in a `.mat` file. This
-`.mat` files are the loaded into the workspace in the simulation
+done, the terminal conditions are also stored in a `.mat` file. 
+This`.mat` files are the loaded into the workspace in the simulation
 scripts.
 
 `.mex` functions for the simulation are generated to improve simulation
@@ -137,7 +137,7 @@ Three-Axis_constrained_quartic_compFun/
 
 ### Reproduction
 
-Run `evaluation.m` to get all plots from the paper and additional once.
+Run `evaluation.m` to get all plots from the paper and additional once. Due to the large size of the `.mat` file, you have to copy and paste it from the DARUS data repository. Or, you re-run the simulation. However, you might receive different results because a new uniform distribution is calculated for the initial conditions.
 
 ### Re-running
 
