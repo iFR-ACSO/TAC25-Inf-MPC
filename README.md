@@ -20,10 +20,16 @@ aforementioned parts is provided.
 
 - For the pre-computation step we make use of
   CaΣoS [1] v1.0.0-rc. The used version can be found
-  in the repository. Add the main folder of CaΣoS to the Matlab
-  path.
+  in the repository. After cloning this repository, get the submodule
+  CaΣoS with
+  ```
+  git clone https://github.com/your/MainRepo.git
+  cd MainRepo
+  git submodule update --init --recursive
 
-- MOSEK [2] v10.2.5 is used as the underlying SDP
+  ```
+
+- MOSEK [2] v11.0.4 is used as the underlying SDP
   solver for the pre-computation step. Academic licenses can be obtained
   from <https://www.mosek.com/products/academic-licenses/>. Follow the
   installation instructions from MOSEK.
