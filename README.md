@@ -23,9 +23,13 @@ aforementioned parts is provided.
   in the repository. After cloning this repository, get the submodule
   CaΣoS with
   ```
-  git clone https://github.com/your/MainRepo.git
-  cd MainRepo
+  git clone [https://github.com/your/MainRepo.git](https://github.com/iFR-ACSO/TAC25-Inf-MPC.git) TAC-Inf-MPC
+  cd TAC-Inf-MPC
   git submodule update --init --recursive
+  ```
+  or in one go
+  ```
+  git clone --recurse-submodules [https://github.com/your/MainRepo.git](https://github.com/iFR-ACSO/TAC25-Inf-MPC.git) TAC-Inf-MPC
 
   ```
 
@@ -41,6 +45,13 @@ aforementioned parts is provided.
   IPOPT [5] to solve the discrete-time OCP.
   The solvers are included in CasADi so no additional installation
   required.
+
+After installing all the above needed software
+```
+1. Open Matlab and add navigate to the main folder. You should see three folder, one with the initialized submodule
+2. Add the CaΣoS folder to the MATLAB path.
+3. You can either re-run everything (see below) or if you just want to reproduce the data, you might need to copy paste some large .mat filder from the DARUS repository (see the ReadME.txt in DARUS)
+```
 
 ## Running Examples and Reproducing Results
 
