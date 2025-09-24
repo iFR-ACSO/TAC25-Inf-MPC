@@ -23,13 +23,13 @@ aforementioned parts is provided.
   in the repository. After cloning this repository, get the submodule
   CaΣoS with
   ```
-  git clone [https://github.com/your/MainRepo.git](https://github.com/iFR-ACSO/TAC25-Inf-MPC.git) TAC-Inf-MPC
+  git clone https://github.com/iFR-ACSO/TAC25-Inf-MPC.git TAC-Inf-MPC
   cd TAC-Inf-MPC
   git submodule update --init --recursive
   ```
   or in one go
   ```
-  git clone --recurse-submodules [https://github.com/your/MainRepo.git](https://github.com/iFR-ACSO/TAC25-Inf-MPC.git) TAC-Inf-MPC
+  git clone --recurse-submodules https://github.com/iFR-ACSO/TAC25-Inf-MPC.git TAC-Inf-MPC
 
   ```
 
