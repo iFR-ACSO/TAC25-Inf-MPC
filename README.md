@@ -93,14 +93,14 @@ Comparison_singleAxis/
 
 ### Reproduction
 
-We provide `.mat` files for each individual approach in the main folder. This includes the pre-computation results or the
+We provide `.mat` files for each individual approach in the main folder, of the
 actual simulation results. Run `comparison_MultipleRuns.m`, to reproduce
 the table from the paper and to get the plot for the single axis
 rotation. Due to the large amount of data, the full-horizon NMPC
 formulations (RTI and IPOPT) have post-processing scripts in their
 folders (see above). Once the actual simulation ran, the post-processing script
 reduces the data to the comparison minimum. The data of the complete
-workspace for the full-horizon formulations is provided in the DARUS data repository.
+workspace for the full-horizon formulations is provided in the DARUS data repository. This pre-computation results can be found in the corresponding folder of each method.
 
 ### Re-running 
 
@@ -148,6 +148,12 @@ script`synthesis_CBF_CLF.m`. Important to know is that the simulations
 script `inf_MPC_simulation.m` computes a new uniform distribution if
 re-run. Thus, different results to the paper are expected!
 
+
+### Final remarks
+In case of problems, questions or remarks, please contact the corresponding authors (see below). 
+Jan Olucak: jan.olucak@ifr.uni-stuttgart.de
+Torbjørn Cunis: torbjoern.cunis@ifr.uni-stuttgart.de
+Arthur Castello B. de Oliveira: castello.a@northeastern.edu
 
 ### References
 
