@@ -50,7 +50,7 @@ After installing all the above needed software:
 
 1. Open Matlab and add navigate to the main folder. You should see three folder, one with the initialized submodule
 2. Add the CaΣoS folder to the MATLAB path.
-3. You can either re-run everything (see below) or if you just want to reproduce the data, you might need to copy paste some large .mat filder from the DARUS repository (see the ReadME.txt in DARUS)
+3. You can either re-run everything (see below) or if you just want to reproduce the data, you might need to copy paste some large .mat filder from the DARUS repository  https://doi.org/10.18419/DARUS-5297 (see the ReadME.txt in DARUS)
 
 
 ## Running Examples and Reproducing Results
