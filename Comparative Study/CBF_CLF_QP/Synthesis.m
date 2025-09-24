@@ -1,7 +1,7 @@
 %% ------------------------------------------------------------------------
 %   
-%   Supplementary Material for "Infinitesimal-horizon model predictive 
-%   control as control barrier and Lyapunov function approach" by 
+%   Supplementary Material for "Safe-by-Design: Approximate Nonlinear Model 
+%   Predictive Control with Realtime Feasibility" by 
 %   Jan Olucak, Arthur Castello B. de Oliveira, and Torbjørn Cunis
 %
 %   Short Description: Script to syntheszise the non-conflicting CBF/CLF

@@ -1,13 +1,13 @@
 %% ------------------------------------------------------------------------
 %   
-%   Supplementary Material for "Infinitesimal-horizon model predictive 
-%   control as control barrier and Lyapunov function approach" by 
+%   Supplementary Material for "Safe-by-Design: Approximate Nonlinear Model 
+%   Predictive Control with Realtime Feasibility" by 
 %   Jan Olucak, Arthur Castello B. de Oliveira, and Torbjørn Cunis
 %
 %   Short Description: Script to syntheszise the non-conflicting CBF/CLF for 
 %                      for the infinetesimal-MPC approach for simple bound 
 %                      constraints and one keep-out cone. The constraints
-%                      are approximated in "innerApprox_allowSet.m", i.e.,
+%                      are approximated in "innerApprox_constraintSet.m", i.e.,
 %                      an inner approximation of the allowable set is
 %                      pre-computed.
 %                      The CBF/CLF is pre-computed  and  stored in .mat file, 

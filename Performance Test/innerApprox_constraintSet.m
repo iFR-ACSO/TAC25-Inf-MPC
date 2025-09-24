@@ -1,10 +1,10 @@
 %% ------------------------------------------------------------------------
 %   
-%   Supplementary Material for "Infinitesimal-horizon model predictive 
-%   control as control barrier and Lyapunov function approach" by 
+%   Supplementary Material for "Safe-by-Design: Approximate Nonlinear Model 
+%   Predictive Control with Realtime Feasibility" by 
 %   Jan Olucak, Arthur Castello B. de Oliveira, and Torbjørn Cunis
 %
-%   Short Description: Compute an allowable set in six indeterminate (rates and 
+%   Short Description: Compute a approx. constraint set in six indeterminate (rates and 
 %                      Modified Rodrigues Parameter (MRP)) for one keep-ot cone, 
 %					   rate constraints and a constraint to bound the length 
 %					   of the MRP. A sampling based approach is used in the end to 

@@ -1,19 +1,15 @@
 %% ------------------------------------------------------------------------
 %
-%   Supplementary Material for "Infinitesimal-horizon model predictive 
-%   control as control barrier and Lyapunov function approach" by 
+%   Supplementary Material for "Safe-by-Design: Approximate Nonlinear Model 
+%   Predictive Control with Realtime Feasibility" by 
 %   Jan Olucak, Arthur Castello B. de Oliveira, and Torbjørn Cunis
 %
-%   Short Description: This script is used to evaluate the second test case
-%   in [1]. Plots are generated, the performance is evaluated and the plots
-%   (and if desired) the tikz pictures found in [1] are generated.
+%   Short Description: This script is used to evaluate the second test case.
+%   Plots are generated, the performance is evaluated and the plots
+%   (and if desired) the tikz pictures found in the publication are generated.
 %
 %   License: see License file in repository.   
 %
-%   References: [1] Olucak, J, de Oliveira, A.C.B. and Cunis, T - 
-%   Infinitesimal-horizon model predictive control as control barrier and 
-%   Lyapunov function approach, submitted to IEEE Transaction on Automatic
-%   Control
 %
 % ------------------------------------------------------------------------
 
@@ -23,8 +19,9 @@ clc
 
 % generate tikz figures and pdf; set to true if needed (requires
 % matlab2tikz)
-tikz = false;
+tikz     = false;
 export3D = false;
+
 addpath("helperFunctions\")
 
 % load MC data
