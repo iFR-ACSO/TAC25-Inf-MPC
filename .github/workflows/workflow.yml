@@ -3,7 +3,7 @@ name: Upload to Dataverse
 on:
   push:
     branches:
-      - main  
+      - main
   workflow_dispatch:
 
 jobs:
@@ -12,13 +12,14 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       # Verify Dataverse connection and API token
-      - name: Verify Dataverse connection
+      - name: Verify Dataverse dataset access
         run: |
-          echo "Verifying Dataverse API connection..."
-          curl -H "X-Dataverse-key: ${{ secrets.DATAVERSE_TOKEN }}" https://darus.uni-stuttgart.de/api/dataverses/darus
+          echo "Verifying Dataverse dataset access..."
+          curl -f -H "X-Dataverse-key: ${{ secrets.DATAVERSE_TOKEN }}" \
+            "https://darus.uni-stuttgart.de/api/datasets/:persistentId/?persistentId=doi:10.18419/DARUS-5297"
 
       - name: Send repo to Dataverse
         uses: IQSS/dataverse-uploader@v1.6
