@@ -13,19 +13,15 @@ jobs:
     steps:
       - name: Checkout code (with submodules)
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
-
+      # Verify Dataverse connection and API token
       - name: Verify Dataverse dataset access
         run: |
           echo "Verifying Dataverse dataset access..."
           curl -f -H "X-Dataverse-key: ${{ secrets.DATAVERSE_TOKEN }}" \
             "https://darus.uni-stuttgart.de/api/datasets/:persistentId/?persistentId=doi:10.18419/DARUS-5297"
-
-      # Debug: show repo contents
-      - name: List repo contents
-        run: |
-          echo "Workspace is: $GITHUB_WORKSPACE"
-          ls -R $GITHUB_WORKSPACE
 
       - name: Send repo to Dataverse
         uses: IQSS/dataverse-uploader@v1.6
@@ -33,7 +29,6 @@ jobs:
           DATAVERSE_TOKEN: ${{ secrets.DATAVERSE_TOKEN }}
           DATAVERSE_SERVER: https://darus.uni-stuttgart.de
           DATAVERSE_DATASET_DOI: doi:10.18419/DARUS-5297
-          # Explicitly list all dirs/files you want uploaded
-          GITHUB_DIR: "Comparative Study,Performance Test,README.md,LICENSE"
-          DELETE: True
+          GITHUB_DIR: ${{ github.workspace }}
+          DELETE: False
           PUBLISH: False
