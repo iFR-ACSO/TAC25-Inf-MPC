@@ -24,7 +24,7 @@ jobs:
         uses: IQSS/dataverse-uploader@v1.6
         with:
           DATAVERSE_TOKEN: ${{ secrets.DATAVERSE_TOKEN }}
-          DATAVERSE_SERVER: https://darus.uni-stuttgart.de/dataverse/darus
+          DATAVERSE_SERVER: https://darus.uni-stuttgart.de
           DATAVERSE_DATASET_DOI: doi:10.18419/DARUS-5297
           DELETE: False
           PUBLISH: True
