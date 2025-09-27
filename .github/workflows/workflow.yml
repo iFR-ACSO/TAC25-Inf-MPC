@@ -26,4 +26,5 @@ jobs:
           DATAVERSE_TOKEN: ${{ secrets.DATAVERSE_TOKEN }}
           DATAVERSE_SERVER: https://darus.uni-stuttgart.de/dataverse/darus
           DATAVERSE_DATASET_DOI: doi:10.18419/DARUS-5297
-          ACTION: "add"
+          DELETE: False
+          PUBLISH: True
