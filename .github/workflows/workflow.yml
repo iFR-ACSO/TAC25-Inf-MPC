@@ -29,6 +29,6 @@ jobs:
           DATAVERSE_TOKEN: ${{ secrets.DATAVERSE_TOKEN }}
           DATAVERSE_SERVER: https://darus.uni-stuttgart.de
           DATAVERSE_DATASET_DOI: doi:10.18419/DARUS-5297
-          GITHUB_DIR: .
+          GITHUB_DIR: ${{ github.workspace }}
           DELETE: False
           PUBLISH: False
