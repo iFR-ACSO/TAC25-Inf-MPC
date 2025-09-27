@@ -1,14 +1,22 @@
-on: 
+name: Upload to Dataverse
+
+on:
   push:
-  workflow_dispatch:
+    branches:
+      - main  
+  workflow_dispatch: 
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Send repo to Dataverse 
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Send repo to Dataverse
         uses: IQSS/dataverse-uploader@v1.6
         with:
-          DATAVERSE_TOKEN: ${{secrets.DATAVERSE_TOKEN}}
+          DATAVERSE_TOKEN: ${{ secrets.DATAVERSE_TOKEN }}
           DATAVERSE_SERVER: https://darus.uni-stuttgart.de/dataverse/darus
           DATAVERSE_DATASET_DOI: doi:10.18419/DARUS-5297
