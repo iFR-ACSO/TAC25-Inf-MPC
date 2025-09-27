@@ -1,19 +1,15 @@
 %% ------------------------------------------------------------------------
 %
-%   Supplementary Material for "Infinitesimal-horizon model predictive 
-%   control as control barrier and Lyapunov function approach" by 
+%   Supplementary Material for "Safe-by-Design: Approximate Nonlinear Model 
+%   Predictive Control with Realtime Feasibility" by 
 %   Jan Olucak, Arthur Castello B. de Oliveira, and Torbjørn Cunis
 %
-%   Short Description: This script is used to evaluate the second test case
-%   in [1]. Plots are generated, the performance is evaluated and the plots
-%   (and if desired) the tikz pictures found in [1] are generated.
+%   Short Description: This script is used to evaluate the second test case.
+%   Plots are generated, the performance is evaluated and the plots
+%   (and if desired) the tikz pictures found in the publication are generated.
 %
 %   License: see License file in repository.   
 %
-%   References: [1] Olucak, J, de Oliveira, A.C.B. and Cunis, T - 
-%   Infinitesimal-horizon model predictive control as control barrier and 
-%   Lyapunov function approach, submitted to IEEE Transaction on Automatic
-%   Control
 %
 % ------------------------------------------------------------------------
 
@@ -21,12 +17,19 @@ close all
 clear
 clc
 
+% generate tikz figures and pdf; set to true if needed (requires
+% matlab2tikz)
+tikz     = false;
+export3D = false;
 
 addpath("helperFunctions\")
 
 % load MC data
-load 'full_WS_KeepOutResults_withCompFun.mat'
-
+if exist('full_WS_KeepOutResults_withCompFun.mat','file')
+    load 'full_WS_KeepOutResults_withCompFun.mat'
+else
+    disp('Please download data from DARUS repo: https://doi.org/10.18419/DARUS-5297')
+end
 
 
 %% Compute statistics on computation time in miliseconds
@@ -116,10 +119,10 @@ for i = 4:6
     legend(h,'zero line')
 end
 
-
+if tikz
 cleanfigure();
 matlab2tikz('attitude_compII.tex','width','\figW','height','\figH');
-
+end
 % Plot Control Torques in miliNetwonmeter
 t_short = linspace(0, simTime, (simTime/simStepSize)-1);
 
@@ -160,9 +163,10 @@ h = zeros(1, 1);
 h(1) = plot(NaN,NaN,'k--');
 legend(h,'zero line')
 
+if tikz 
 cleanfigure();
 matlab2tikz('torques_compII.tex','width','\figW','height','\figH');
-
+end
 
 
 % Plot Sufficient Conditions evaluted along trajectories
@@ -181,9 +185,10 @@ h = zeros(1, 1);
 h(1) = plot(NaN,NaN,'k--');
 legend(h,'zero line')
 
+if tikz
 cleanfigure();
 matlab2tikz('suffCon_compII.tex','width','\figW','height','\figH');
-
+end
 
 % Plot barrier evaluted along trajectories
 figure('Name', 'Barrier');
@@ -290,5 +295,6 @@ set(gca, 'TickLabelInterpreter', 'latex', 'FontSize', 10);
 xlabel('$x_I$', 'Interpreter', 'latex', 'FontSize', 10);      % x-axis label
 ylabel('$y_I$', 'Interpreter', 'latex', 'FontSize', 10);      % y-axis label
 zlabel('$z_I$', 'Interpreter', 'latex', 'FontSize', 10);      % if 3D plot
-
+if export3D
 exportgraphics(gcf, 'scenario2.pdf', 'ContentType', 'vector');
+end

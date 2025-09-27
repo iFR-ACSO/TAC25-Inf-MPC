@@ -1,4 +1,8 @@
 %==========================================================================
+%   Supplementary Material for "Safe-by-Design: Approximate Nonlinear Model 
+%   Predictive Control with Realtime Feasibility" by 
+%   Jan Olucak, Arthur Castello B. de Oliveira, and Torbjørn Cunis
+%
 %
 %   Short Description:  Generate a CaSoS constraint for one keep-out zone.
 %                       We first use the Matlab symbolic toolbox to setup 

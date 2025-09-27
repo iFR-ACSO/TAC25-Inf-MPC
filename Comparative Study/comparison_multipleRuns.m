@@ -1,10 +1,29 @@
+%% ------------------------------------------------------------------------
+%   
+%   Supplementary Material for "Safe-by-Design: Approximate Nonlinear Model 
+%   Predictive Control with Realtime Feasibility" by 
+%   Jan Olucak, Arthur Castello B. de Oliveira, and Torbjørn Cunis
+%
+%   Short Description: Evalaute all methods and compare in several
+%   categories.
+%
+%
+%   Needed software: - CasADi 3.6 (for CaSoS)
+%                    - CaSoS
+%
+%
+%   License: see License file in repository.   
+%
+% ------------------------------------------------------------------------
+
+
 close all
 clc
 clear
 
 % generate true to generate tikz code using matlab2tikz (matlab2tikz must
 % be on MATLAB path)
-genTikz = true;
+genTikz = false;
 
 % load some conversion function for attitute parameterization
 addpath("helperFunc\")

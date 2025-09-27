@@ -1,7 +1,7 @@
 %% ------------------------------------------------------------------------
 %   
-%   Supplementary Material for "Infinitesimal-horizon model predictive 
-%   control as control barrier and Lyapunov function approach" by 
+%   Supplementary Material for "Safe-by-Design: Approximate Nonlinear Model 
+%   Predictive Control with Realtime Feasibility" by 
 %   Jan Olucak, Arthur Castello B. de Oliveira, and Torbjørn Cunis
 %
 %   Short Description: Script to execute Monte-carlo simulations for the 
@@ -48,7 +48,7 @@ close all
 clc
 
 % functions to convert e.g. from MRP to Euler angles
-addpath('..\helperFunc\')
+addpath('helperFunctions\')
 
 % select a QP solver
 qpSolver = 'qrqp'; % 'qpOASES','osqp','proxqp', 'qrqp'

@@ -1,6 +1,6 @@
 # Introduction
 
-This document supplements the paper \[ADD CITATION\]. It provides more
+This document supplements the paper *Safe-by-Design: Approximate Nonlinear Model Predictive Control with Real-time Feasibility*. It provides more
 details on the implementation and a short user guide to either reproduce
 the figures of the paper or re-run the MATLAB scripts.
 
@@ -158,7 +158,7 @@ Arthur Castello B. de Oliveira: castello.a@northeastern.edu
 ### References
 
 
-[1] T. Cunis and J. Olucak, “CaoS: A nonlinear sum-of-squares optimization suite,” in 2025 Amer-
+[1] T. Cunis and J. Olucak, “CaΣoS: A nonlinear sum-of-squares optimization suite,” in 2025 Amer-
 ican Control Conference, (Boulder, CO), pp. 1659–1666, 2025.
 
 [2] E. D. Andersen and K. D. Andersen, “The Mosek Interior Point Optimizer for Linear Program-
