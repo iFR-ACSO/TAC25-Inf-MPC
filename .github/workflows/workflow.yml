@@ -4,7 +4,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows
+    runs-on: ubuntu-latest
     steps:
       - name: Send repo to Dataverse 
         uses: IQSS/dataverse-uploader@v1.6
