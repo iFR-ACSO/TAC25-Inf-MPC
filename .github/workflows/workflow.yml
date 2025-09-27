@@ -14,6 +14,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      # Verify Dataverse connection and API token
+      - name: Verify Dataverse connection
+        run: |
+          echo "Verifying Dataverse API connection..."
+          curl -H "X-Dataverse-key: ${{ secrets.DATAVERSE_TOKEN }}" https://darus.uni-stuttgart.de/api/dataverses/darus
+
       - name: Send repo to Dataverse
         uses: IQSS/dataverse-uploader@v1.6
         with:
