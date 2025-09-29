@@ -1,6 +1,6 @@
 # Introduction
 
-This repository supplements the paper *Safe-by-Design: Approximate Nonlinear Model Predictive Control with Real-time Feasibility*. A preprint is available 
+This repository supplements the paper *Safe-by-Design: Approximate Nonlinear Model Predictive Control with Real-time Feasibility*. A [preprint](https://arxiv.org/abs/2509.22422) is available
 It provides more details on the implementation and a short user guide to either reproduce
 the figures of the paper or re-run the MATLAB scripts.
 
@@ -34,7 +34,7 @@ aforementioned parts is provided.
   ```
 
 
-- An alternative is to use the provided `.zip` in the DARUS repository <https://doi.org/10.18419/DARUS-5297\>. Download the data set and unzip it. A copy of CaΣoS submodule is provided.
+- An alternative is to use the provided `.zip` in the [DARUS repository](https://doi.org/10.18419/DARUS-5297). Download the data set and unzip it. A copy of CaΣoS submodule is provided.
   Follow the instructions below. 
 
 - MOSEK [2] v11.0.4 is used as the underlying SDP
@@ -78,7 +78,7 @@ time. To compile the `.mex` functions a C/C++ compiler is required.
 For the full-horizon NMPC formulations (Ipopt, RTI), the terminal set is
 also pre-computed, i.e., the maximum stable level set, which can be
 found in `full_MPC_IPOPT/termIngredient_full.m`. After the simulations
-run, plots from all runs are generated and `.mat ` files. Due to the larger size, the `.mat` files are post-processed. You can find the full workspace `.mat` in the DARUS repo. The post-processed `.mat`
+run, plots from all runs are generated and `.mat ` files. Due to the larger size, the `.mat` files are post-processed. You can find the full workspace `.mat` in the [DARUS repository](https://doi.org/10.18419/DARUS-5297). The post-processed `.mat`
 results are stored in the main folder.
 
 ### Folder Structure
@@ -104,7 +104,7 @@ rotation. Due to the large amount of data, the full-horizon NMPC
 formulations (RTI and IPOPT) have post-processing scripts in their
 folders (see above). Once the actual simulation ran, the post-processing script
 reduces the data to the comparison minimum. The data of the complete
-workspace for the full-horizon formulations is provided in the DARUS data repository. This pre-computation results can be found in the corresponding folder of each method.
+workspace for the full-horizon formulations is provided in the [DARUS repository](https://doi.org/10.18419/DARUS-5297). This pre-computation results can be found in the corresponding folder of each method.
 
 ### Re-running 
 
@@ -141,7 +141,7 @@ Three-Axis_constrained_quartic_compFun/
 
 ### Reproduction
 
-Run `evaluation.m` to get all plots from the paper and additional once. Due to the large size of the `.mat` file, you have to copy and paste it from the DARUS <https://doi.org/10.18419/DARUS-5297/> data repository in the corresponding folder. Or, you re-run the simulation. However, you might receive different results because a new uniform distribution is calculated for the initial conditions.
+Run `evaluation.m` to get all plots from the paper and additional once. Due to the large size of the `.mat` file, you have to copy and paste it from the [DARUS repository](https://doi.org/10.18419/DARUS-5297) in the corresponding folder. Or, you re-run the simulation. However, you might receive different results because a new uniform distribution is calculated for the initial conditions.
 
 ### Re-running
 
@@ -158,6 +158,34 @@ In case of problems, questions or remarks, please contact the corresponding auth
 Jan Olucak: jan.olucak@ifr.uni-stuttgart.de
 Torbjørn Cunis: torbjoern.cunis@ifr.uni-stuttgart.de
 Arthur Castello B. de Oliveira: castello.a@northeastern.edu
+
+
+### Citation
+Please cite the paper with 
+```
+@misc{olucak2025safebydesignapproximatenonlinearmodel,
+      title={Safe-by-Design: Approximate Nonlinear Model Predictive Control with Real Time Feasibility}, 
+      author={Jan Olucak and Arthur Castello B. de Oliveira and Torbjørn Cunis},
+      year={2025},
+      eprint={2509.22422},
+      archivePrefix={arXiv},
+      primaryClass={math.OC},
+      url={https://arxiv.org/abs/2509.22422}, 
+}
+```
+
+The supplemantary material can be cited with
+```
+@data{DARUS-5297_2025,
+author = {Olucak, Jan},
+publisher = {DaRUS},
+title = {{Supplementary Material for: Safe-by-Design Approximate Nonlinear Model Predictive Control with Realtime Feasibility}},
+year = {2025},
+version = {V1},
+doi = {10.18419/DARUS-5297},
+url = {https://doi.org/10.18419/DARUS-5297}
+}
+```
 
 ### References
 
