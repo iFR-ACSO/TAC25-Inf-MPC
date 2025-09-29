@@ -1,7 +1,7 @@
 # Introduction
 
-This document supplements the paper *Safe-by-Design: Approximate Nonlinear Model Predictive Control with Real-time Feasibility*. It provides more
-details on the implementation and a short user guide to either reproduce
+This repository supplements the paper *Safe-by-Design: Approximate Nonlinear Model Predictive Control with Real-time Feasibility*. A preprint is available 
+It provides more details on the implementation and a short user guide to either reproduce
 the figures of the paper or re-run the MATLAB scripts.
 
 # Overview
@@ -32,6 +32,10 @@ aforementioned parts is provided.
   git clone --recurse-submodules https://github.com/iFR-ACSO/TAC25-Inf-MPC.git TAC-Inf-MPC
 
   ```
+
+
+- An alternative is to use the provided `.zip` in the DARUS repository <https://doi.org/10.18419/DARUS-5297\>. Download the data set and unzip it. A copy of CaΣoS submodule is provided.
+  Follow the instructions below. 
 
 - MOSEK [2] v11.0.4 is used as the underlying SDP
   solver for the pre-computation step. Academic licenses can be obtained
@@ -128,21 +132,21 @@ Not all functions and `.mat` files are listed. Only the most important
 functions.
 ```text
 Three-Axis_constrained_quartic_compFun/
-├── helperFunction/             # Folder that contains helper functions (e.g. MRP→Euler)
-├── innerApprox_allowSet.m      # Compute inner-approximation of constraint set
-├── synthesis_CBF_CLF.m         # Script for the synthesis of the terminal conditions
-└── inf_MPC_simulation.m        # Script to run the Monte-Carlo simulations
+├── helperFunction/               # Folder that contains helper functions (e.g. MRP→Euler)
+├── innerApprox_constraintSet.m   # Compute inner-approximation of constraint set
+├── synthesis_CBF_CLF.m           # Script for the synthesis of the terminal conditions
+└── inf_MPC_simulation.m          # Script to run the Monte-Carlo simulations
 ```
 
 
 ### Reproduction
 
-Run `evaluation.m` to get all plots from the paper and additional once. Due to the large size of the `.mat` file, you have to copy and paste it from the DARUS data repository. Or, you re-run the simulation. However, you might receive different results because a new uniform distribution is calculated for the initial conditions.
+Run `evaluation.m` to get all plots from the paper and additional once. Due to the large size of the `.mat` file, you have to copy and paste it from the DARUS <https://doi.org/10.18419/DARUS-5297/> data repository in the corresponding folder. Or, you re-run the simulation. However, you might receive different results because a new uniform distribution is calculated for the initial conditions.
 
 ### Re-running
 
 The inner-approximation of the constraint set (i.e., the constraint set)
-for this scenario can be pre-computed using `innerApprox_allowSet.m`.
+for this scenario can be pre-computed using `innerApprox_constraintSet.m`
 The approximated constraint set is manually inserted into the synthesis
 script`synthesis_CBF_CLF.m`. Important to know is that the simulations
 script `inf_MPC_simulation.m` computes a new uniform distribution if
