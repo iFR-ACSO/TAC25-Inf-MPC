@@ -50,6 +50,8 @@ aforementioned parts is provided.
   The solvers are included in CasADi so no additional installation
   required.
 
+- For reproduction of the plots in the [papert](https://arxiv.org/abs/2509.22422), large `.mat` files (>50 MB) are needed. They are stored in the [DARUS repository](https://doi.org/10.18419/DARUS-5297).
+
 After installing all the above needed software:
 
 1. Open Matlab and add navigate to the main folder. You should see three folder, one with the initialized submodule
