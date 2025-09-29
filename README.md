@@ -54,9 +54,9 @@ aforementioned parts is provided.
 
 After installing all the above needed software:
 
-1. Open Matlab and add navigate to the main folder. You should see three folder, one with the initialized submodule
-2. Add the CaΣoS folder to the MATLAB path.
-3. You can either re-run everything (see below) or if you just want to reproduce the data, you might need to copy paste some large .mat filder from the DARUS repository  https://doi.org/10.18419/DARUS-5297 (see the ReadME.txt in DARUS)
+1. Open Matlab and navigate to the main folder. You should see three folder, one with the initialized submodule (or Copy)
+2. Add the CaΣoS main folder to the MATLAB path.
+3. You can either re-run everything (see below) or if you just want to reproduce the data (i.e., plots and tables), you might need to copy paste some large `.mat` files from the [DARUS repository](https://doi.org/10.18419/DARUS-5297).
 
 
 ## Running Examples and Reproducing Results
@@ -68,7 +68,7 @@ explained before.
 
 ### Overview Files
 
-For the CBF-CLF-QP and infinetesimal MPC scheme the user finds a synthesis
+For the CBF-CLF-QP and infinetesimal MPC scheme the user finds a synthesis script
 to compute the terminal conditions. These use an initial guess, which is
 loaded from a `.mat` file. Once the synthesis is done, the terminal
 conditions are also stored in a `.mat` file. This `.mat` files are the
@@ -79,8 +79,8 @@ time. To compile the `.mex` functions a C/C++ compiler is required.
 
 For the full-horizon NMPC formulations (Ipopt, RTI), the terminal set is
 also pre-computed, i.e., the maximum stable level set, which can be
-found in `full_MPC_IPOPT/termIngredient_full.m`. After the simulations
-run, plots from all runs are generated and `.mat ` files. Due to the larger size, the `.mat` files are post-processed. You can find the full workspace `.mat` in the [DARUS repository](https://doi.org/10.18419/DARUS-5297). The post-processed `.mat`
+found in `full_MPC_IPOPT/termIngredient_full.m`. The level set is manually set in the simulation script. After the simulations
+run, plots from all runs are generated and `.mat ` file of the whole workspace is stored. Due to the larger size, the `.mat` files are post-processed. You can find the full workspace `.mat` in the [DARUS repository](https://doi.org/10.18419/DARUS-5297). The post-processed `.mat`
 results are stored in the main folder.
 
 ### Folder Structure
@@ -88,7 +88,7 @@ results are stored in the main folder.
 ```text
 Comparison_singleAxis/
 ├── CBF_CLF_QP         # CBF-CLF synthesis and simulation
-├── full_MPC_alpaqa    # Full-horizon NMPC simulation using alpaqa solver
+├── full_MPC_alpaqa    # Full-horizon NMPC simulation using alpaqa solver (or fatrop)
 ├── full_MPC_IPOPT     # Full-horizon NMPC simulation using IPOPT solver
 ├── helperFunc         # Folder that contains helper functions (e.g. MRP→Euler)
 ├── inf_MPC            # Synthesis and simulation of inf.MPC
@@ -130,7 +130,7 @@ time. To compile the `.mex` functions a C/C++ compiler is required.
 
 ### Folder Structure
 
-Not all functions and `.mat` files are listed. Only the most important
+Not all MATLAB scripts and `.mat` files are listed. Only the most important
 functions.
 ```text
 Three-Axis_constrained_quartic_compFun/
@@ -148,7 +148,7 @@ Run `evaluation.m` to get all plots from the paper and additional once. Due to t
 ### Re-running
 
 The inner-approximation of the constraint set (i.e., the constraint set)
-for this scenario can be pre-computed using `innerApprox_constraintSet.m`
+for this scenario can be pre-computed using `innerApprox_constraintSet.m`.
 The approximated constraint set is manually inserted into the synthesis
 script`synthesis_CBF_CLF.m`. Important to know is that the simulations
 script `inf_MPC_simulation.m` computes a new uniform distribution if
@@ -163,7 +163,7 @@ Arthur Castello B. de Oliveira: castello.a@northeastern.edu
 
 
 ### Citation
-Please cite the paper with 
+Please cite the paper as 
 ```
 @misc{olucak2025safebydesignapproximatenonlinearmodel,
       title={Safe-by-Design: Approximate Nonlinear Model Predictive Control with Real Time Feasibility}, 
