@@ -179,14 +179,15 @@ Please cite the paper with
 The supplemantary material can be cited with
 ```
 @data{DARUS-5297_2025,
-author = {Olucak, Jan},
+author = {Olucak, Jan and Castello Branco de Oliveira, Arthur and Cunis, Torbjørn},
 publisher = {DaRUS},
 title = {{Supplementary Material for: Safe-by-Design Approximate Nonlinear Model Predictive Control with Realtime Feasibility}},
 year = {2025},
-version = {V1},
+version = {DRAFT VERSION},
 doi = {10.18419/DARUS-5297},
 url = {https://doi.org/10.18419/DARUS-5297}
 }
+
 ```
 
 ### References
