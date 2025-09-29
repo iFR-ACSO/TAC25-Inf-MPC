@@ -15,7 +15,7 @@ aforementioned parts is provided.
 
 ## Needed Software and Setup
 
-- MATLAB 2021b or newer is required (newer versions should also work,
+- MATLAB 2023b or newer is required (newer versions should also work,
   but are not tested!)
 
 - For the pre-computation step we make use of
